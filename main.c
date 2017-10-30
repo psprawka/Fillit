@@ -38,8 +38,11 @@ static char		**split(char *str, char letter, int *bricks)
 	{
 		array[*bricks] = ft_strnew(21);
 		array[*bricks] = ft_strsub(ptr, 0, 21);
-		valid_mino(array[*bricks], letter++);
-		*bricks += 1;
+		if ((array[*bricks][0] == '.') || (array[*bricks][0] == '#'))
+		{
+			valid_mino(array[*bricks], letter++);
+			*bricks += 1;
+		}
 		if (ptr[19] == '\n' && ptr[20] == '\n' && ptr[21] == '\0')
 		{
 			ft_putstr_fd("error\n", 1);
@@ -91,7 +94,7 @@ int				main(int ac, char **av)
 		array = read_valid(fd, &brick);
 		mapsize = map_size(brick);
 		map = ft_strnew(mapsize * (mapsize + 1));
-		solve(map, array, mapsize, brick);
+		solve_map(map, array, mapsize, brick);
 		close(fd);
 	}
 	else
