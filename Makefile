@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/12 18:33:48 by psprawka          #+#    #+#              #
-#    Updated: 2017/10/15 15:02:27 by jchung           ###   ########.fr        #
+#    Updated: 2019/09/15 22:26:54 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,28 +16,28 @@ CFLAGS = -Wall -Werror -Wextra
 
 HEAD = fillit.h
 
-SRCS = valid_mino.c \
-	solver.c \
-	rest.c \
-	main.c \
+SRCS = srcs/valid_mino.c \
+	srcs/solver.c \
+	srcs/rest.c \
+	srcs/main.c \
 
-LIBS = libft/libft.a	
+LIBS = Libft/libft.a	
 
 
 all: $(NAME)
 
 $(LIBS):
-	@make -C libft
+	@make -C Libft
 
 $(NAME): $(LIBS)
 	@$(CC) $(CFLAGS) $(SRCS) $(LIBS) -I. -o $(NAME)
 
 clean:
-	@make -C libft clean
+	@make -C Libft clean
 
 fclean: clean
 	@rm -rf $(NAME)
-	@make -C libft fclean
+	@make -C Libft fclean
 
 re: fclean all
 

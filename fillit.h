@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/04 15:17:30 by psprawka          #+#    #+#             */
-/*   Updated: 2017/10/22 17:35:39 by jchung           ###   ########.fr       */
+/*   Updated: 2019/09/15 22:36:34 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "libft/includes/libft.h"
+# include "Libft/includes/libft.h"
 
 int		map_size(int bricks);
 int		valid_map(char *str);
